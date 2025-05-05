@@ -29,6 +29,16 @@ body {
     font-size: 1.5em;
 }
 
+/* Stilizacija loga */
+#logo {
+    width: 150px;  /* Širina loga */
+    height: auto;  /* Visina se prilagođava proporcijama slike */
+    position: absolute;  /* Apsolutna pozicija unutar Hero sekcije */
+    top: 20px;  /* Razmak od vrha */
+    left: 50%;  /* Pozicioniraj na sredinu stranice */
+    transform: translateX(-50%);  /* Pomeri logo da bude tačno centriran */
+}
+
 /* Sekcije */
 .section-content {
     padding: 50px 20px;
