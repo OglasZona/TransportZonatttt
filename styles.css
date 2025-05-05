@@ -6,48 +6,93 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     line-height: 1.6;
     color: #333;
+    background-color: #f4f4f4;
 }
 
 /* Hero Sekcija */
 #hero {
-    background-image: url('kamion-zona.jpg'); /* Dodaj sliku kamiona */
+    background-image: url('kamion-zona.jpg');
     background-size: cover;
     background-position: center;
     color: white;
     text-align: center;
-    padding: 100px 20px;
+    padding: 120px 20px;
+    position: relative;
 }
 
 #hero h1 {
-    font-size: 3em;
+    font-size: 4em;
+    margin-bottom: 20px;
+    animation: fadeIn 2s ease-out;
 }
 
 #hero p {
     font-size: 1.5em;
+    margin-bottom: 30px;
+    animation: fadeIn 3s ease-out;
 }
 
-/* Stilizacija loga */
+#hero .btn {
+    background-color: #333;
+    color: white;
+    padding: 15px 25px;
+    font-size: 1.2em;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+#hero .btn:hover {
+    background-color: #555;
+}
+
+/* Animacija za fadeIn efekat */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Logo */
+#logo-container {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 1000;
+}
+
 #logo {
-    width: 150px;  /* Širina loga */
-    height: auto;  /* Visina se prilagođava proporcijama slike */
-    position: absolute;  /* Apsolutna pozicija unutar Hero sekcije */
-    top: 20px;  /* Razmak od vrha */
-    left: 50%;  /* Pozicioniraj na sredinu stranice */
-    transform: translateX(-50%);  /* Pomeri logo da bude tačno centriran */
+    width: 120px;
+    height: auto;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+#logo:hover {
+    opacity: 1;
 }
 
 /* Sekcije */
 .section-content {
-    padding: 50px 20px;
+    padding: 60px 20px;
     text-align: center;
+    background-color: white;
+    margin-top: 20px;
 }
 
 h2 {
     font-size: 2.5em;
     margin-bottom: 20px;
+    color: #333;
+    text-transform: uppercase;
 }
 
 ul {
@@ -58,6 +103,7 @@ ul {
 ul li {
     font-size: 1.2em;
     margin: 10px 0;
+    color: #666;
 }
 
 /* Dugme za povratak na vrh */
@@ -78,4 +124,24 @@ ul li {
 
 .scroll-to-top:hover {
     background-color: #555;
+}
+
+/* Media Queries za responzivnost */
+@media (max-width: 768px) {
+    #hero h1 {
+        font-size: 2.5em;
+    }
+
+    #hero p {
+        font-size: 1.2em;
+    }
+
+    .section-content {
+        padding: 40px 20px;
+    }
+
+    .scroll-to-top {
+        bottom: 15px;
+        right: 15px;
+    }
 }
